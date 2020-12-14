@@ -18,42 +18,19 @@ int main(void)
     printf("Enter the second date (mm/dd/yy): ");
     scanf("%d/%d/%d", &secondM, &secondD, &secondY);
 
-
-    // Think, what is the way to do this??
-
-    if (firstY > secondY)
+    // if first date is later than second date
+    if (firstY > secondY ||
+        (firstY == secondY && firstM > secondM) ||
+        (firstY == secondY && firstM == secondM && firstD > secondD) )
     {
-
-    }
-    else if (firstY < secondY)
-    {
-
+        printf("%02d/%02d/%02d is earlier than %02d/%02d/%02d\n", secondM, secondD, 
+        secondY, firstM, firstD, firstY);
     }
     else
     {
-        if (firstM > secondM)
-        {
-
-        }
-        else if (firstM < secondM)
-        {
-
-        }
-        else
-        {
-            if (firstD > secondD)
-            {
-                
-            }
-            else if (firstD < secondD)
-            {
-
-            }
-            else
-            {
-
-            }
-        }
+        printf("%02d/%02d/%02d is earlier than %02d/%02d/%02d\n", firstM, firstD, 
+        firstY, secondM, secondD, secondY);
     }
+    
     return 0;
 }
